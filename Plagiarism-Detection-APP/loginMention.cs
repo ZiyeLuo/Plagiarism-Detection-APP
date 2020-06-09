@@ -30,7 +30,7 @@ namespace Plagiarism_Detection_APP
 
 
 
-        string defaultPath = " ";
+        string defaultPath = "";
         string lanType = "NULL";
 
         private void addFirstFiles(object sender, EventArgs e)
@@ -89,9 +89,19 @@ namespace Plagiarism_Detection_APP
 
         private void pullAction(object sender, EventArgs e)
         {
+            if (defaultPath == "")
+            {
+                MessageBox.Show("empty path ,you need to choose a dir");
+                return;
+            }
             //绝对路径
-            DirectoryInfo dir = new DirectoryInfo("c:\\test");
-            FileInfo[] fileInfo = dir.GetFiles();
+            DirectoryInfo dir;
+            FileInfo[] fileInfo;
+            try
+            {
+                dir = new DirectoryInfo(defaultPath);
+                fileInfo = dir.GetFiles();
+           
             List<string> fileNames = new List<string>();
             foreach (FileInfo item in fileInfo)
             {
@@ -99,13 +109,47 @@ namespace Plagiarism_Detection_APP
             }
             //获得所有的文件名字
             operation(fileNames);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("文件夹内文件读取出现问题，请检查文件格式");
+            }
         }
         //对文件进行操作，调用接口
         private void operation(List<string>strs)
         {
-            
-        }
+            /***
+             *这里是王的操作空间
+             *
+             */
+                
 
+            WriteWS(@"C:\Users\Ziye Luo\Desktop\Plagiarism-Detection-APP\Plagiarism-Detection-APP\output.txt", "Hello world");
+
+        }
+        //写文件
+        void WriteWS(string filePath,string input)
+        {
+
+
+            FileStream fs = new FileStream(filePath, FileMode.Create);
+            StreamWriter sw = new StreamWriter(fs);
+            try
+            {
+                sw.WriteLine("Hello World!");
+                sw.Flush();
+                sw.Close();
+                fs.Close();
+                Console.WriteLine("Writing has been completed");
+            }
+            catch (IOException e)
+            {
+                sw.Flush();
+                sw.Close();
+                fs.Close();
+                Console.WriteLine(e.ToString());
+            }
+        }
         private void buttonClear_Click(object sender, EventArgs e)
         {
             this.lanAns.Text = "null";
