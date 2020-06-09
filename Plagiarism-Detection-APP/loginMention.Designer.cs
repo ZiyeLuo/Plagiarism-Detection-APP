@@ -165,6 +165,7 @@
             this.buttonClear.TabIndex = 15;
             this.buttonClear.Text = "清除";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // loginMention
             // 

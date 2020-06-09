@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,7 +89,27 @@ namespace Plagiarism_Detection_APP
 
         private void pullAction(object sender, EventArgs e)
         {
+            //绝对路径
+            DirectoryInfo dir = new DirectoryInfo("c:\\test");
+            FileInfo[] fileInfo = dir.GetFiles();
+            List<string> fileNames = new List<string>();
+            foreach (FileInfo item in fileInfo)
+            {
+                fileNames.Add(item.Name);
+            }
+            //获得所有的文件名字
+            operation(fileNames);
+        }
+        //对文件进行操作，调用接口
+        private void operation(List<string>strs)
+        {
+            
+        }
 
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            this.lanAns.Text = "null";
+            this.pathAns.Text = "null";
         }
     }
 }
