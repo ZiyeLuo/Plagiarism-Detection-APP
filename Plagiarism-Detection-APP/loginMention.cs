@@ -106,7 +106,8 @@ namespace Plagiarism_Detection_APP
             foreach (FileInfo item in fileInfo)
             {
                 fileNames.Add(item.Name);
-            }
+                 Console.WriteLine(item.Name)
+    ;       }
             //获得所有的文件名字
             operation(fileNames);
             }
@@ -123,8 +124,8 @@ namespace Plagiarism_Detection_APP
              *
              */
                 
-
-            WriteWS(@"C:\Users\Ziye Luo\Desktop\Plagiarism-Detection-APP\Plagiarism-Detection-APP\output.txt", "Hello world");
+            foreach(var a in strs)
+            WriteWS(@"C:\Users\Ziye Luo\Desktop\Plagiarism-Detection-APP\Plagiarism-Detection-APP\output.txt", a);
 
         }
         //写文件
@@ -136,7 +137,7 @@ namespace Plagiarism_Detection_APP
             StreamWriter sw = new StreamWriter(fs);
             try
             {
-                sw.WriteLine("Hello World!");
+                sw.WriteLine(input);
                 sw.Flush();
                 sw.Close();
                 fs.Close();
