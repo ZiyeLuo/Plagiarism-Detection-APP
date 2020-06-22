@@ -10,6 +10,7 @@ using System.Web;
 using System.Security.Cryptography;
 using System.Security.Permissions;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Plagiarism_Detection_APP
 {
@@ -47,16 +48,33 @@ namespace Plagiarism_Detection_APP
 
         public static String getContent(string filename)//得到一个文件夹下的所有.cs内容
         {
+            result = "";
             string []path=GetFiles(new DirectoryInfo(filename), "*.cs").Split(';');
             string filecontent="";
             foreach (string file in path)
             {
                 if (file == "") continue;
-                filecontent += string.Join("", System.IO.File.ReadAllLines(file));
+                filecontent += getFile(@file);
             }
             filecontent = filecontent.Replace("\n", "").Replace(" ", "").Replace("\t","").Replace("\r", "");
                 
             return filecontent;
         }
+        public static string getFile(string path)
+        {
+            string pattern = @"//.*";
+            Regex r1 = new Regex(pattern); 
+            string pattern2 = @"\[a.*";
+            Regex r2 = new Regex(pattern2);
+            string str ="";
+            string[] lines = System.IO.File.ReadAllLines(@path);
+            foreach (string line in lines)
+            {
+                if (r1.IsMatch(line)||r2.IsMatch(line)) continue;
+                str += line;
+            }
+            return str;
+        }
     }
+
 }
