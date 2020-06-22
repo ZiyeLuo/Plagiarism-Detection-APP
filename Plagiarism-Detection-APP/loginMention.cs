@@ -154,5 +154,12 @@ namespace Plagiarism_Detection_APP
             this.lanAns.Text = "null";
             this.pathAns.Text = "null";
         }
+
+        private void loginMention_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -35,7 +35,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSure = new System.Windows.Forms.Button();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pathAns = new System.Windows.Forms.Label();
@@ -72,7 +71,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(264, 270);
+            this.pictureBox1.Location = new System.Drawing.Point(128, 166);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(175, 175);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -83,7 +82,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(745, 249);
+            this.pictureBox2.Location = new System.Drawing.Point(464, 145);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(196, 196);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -95,7 +94,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Script MT Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(377, 131);
+            this.label1.Location = new System.Drawing.Point(156, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(403, 35);
             this.label1.TabIndex = 3;
@@ -104,7 +103,7 @@
             // buttonSure
             // 
             this.buttonSure.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonSure.Location = new System.Drawing.Point(360, 603);
+            this.buttonSure.Location = new System.Drawing.Point(152, 492);
             this.buttonSure.Name = "buttonSure";
             this.buttonSure.Size = new System.Drawing.Size(497, 40);
             this.buttonSure.TabIndex = 5;
@@ -112,15 +111,11 @@
             this.buttonSure.UseVisualStyleBackColor = true;
             this.buttonSure.Click += new System.EventHandler(this.pullAction);
             // 
-            // folderBrowserDialog1
-            // 
-            this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(468, 506);
+            this.label2.Location = new System.Drawing.Point(208, 387);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 25);
             this.label2.TabIndex = 8;
@@ -130,7 +125,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(468, 546);
+            this.label6.Location = new System.Drawing.Point(234, 449);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 25);
             this.label6.TabIndex = 12;
@@ -140,7 +135,7 @@
             // 
             this.pathAns.AutoSize = true;
             this.pathAns.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pathAns.Location = new System.Drawing.Point(638, 546);
+            this.pathAns.Location = new System.Drawing.Point(459, 449);
             this.pathAns.Name = "pathAns";
             this.pathAns.Size = new System.Drawing.Size(50, 25);
             this.pathAns.TabIndex = 13;
@@ -150,7 +145,7 @@
             // 
             this.lanAns.AutoSize = true;
             this.lanAns.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lanAns.Location = new System.Drawing.Point(638, 506);
+            this.lanAns.Location = new System.Drawing.Point(459, 387);
             this.lanAns.Name = "lanAns";
             this.lanAns.Size = new System.Drawing.Size(50, 25);
             this.lanAns.TabIndex = 14;
@@ -159,7 +154,7 @@
             // buttonClear
             // 
             this.buttonClear.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonClear.Location = new System.Drawing.Point(360, 668);
+            this.buttonClear.Location = new System.Drawing.Point(152, 548);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(497, 40);
             this.buttonClear.TabIndex = 15;
@@ -169,10 +164,10 @@
             // 
             // loginMention
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1200, 788);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.lanAns);
             this.Controls.Add(this.pathAns);
@@ -186,6 +181,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "loginMention";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.loginMention_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -203,7 +200,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSure;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label pathAns;

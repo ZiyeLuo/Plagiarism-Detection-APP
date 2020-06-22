@@ -10,7 +10,7 @@ namespace Plagiarism_Detection_APP
     {
         public static List<string> getContents(String dirpath)
         {
-            List<string> dirs = getDir.getDirName(@"E:\GoogleChrome\4");
+            List<string> dirs = getDir.getDirName(dirpath);
             List<string> contents = new List<string>();
             foreach (string each in dirs)
             {
