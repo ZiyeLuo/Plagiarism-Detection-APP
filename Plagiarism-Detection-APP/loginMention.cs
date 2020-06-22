@@ -95,50 +95,48 @@ namespace Plagiarism_Detection_APP
                 return;
             }
             //绝对路径
-            DirectoryInfo dir;
-            FileInfo[] fileInfo;
             try
             {
-                dir = new DirectoryInfo(defaultPath);
-                fileInfo = dir.GetFiles();
-           
-            List<string> fileNames = new List<string>();
-            foreach (FileInfo item in fileInfo)
-            {
-                fileNames.Add(item.Name);
-                 Console.WriteLine(item.Name)
-    ;       }
-            //获得所有的文件名字
-            operation(fileNames);
+            List<string> files = getContent.getContents(@defaultPath);
+
+                //获得所有的文件名字
+             operation(ref files);
             }
             catch (Exception)
             {
                 MessageBox.Show("文件夹内文件读取出现问题，请检查文件格式");
             }
         }
-        //对文件进行操作，调用接口
-        private void operation(List<string>strs)
+        /*
+         * strs 传入的是每个用户文件的内容，调用接口
+         * 这里是给wlx的提供的接口，可能会有栈溢出，我这已经占用了少部分内存
+         * 如果有栈溢出则需要修改为保存strs到文件
+         */
+        
+        private void operation(ref List<string>strs)
         {
             /***
              *这里是王的操作空间
              *
              */
-                
-            foreach(var a in strs)
-            WriteWS(@"C:\Users\Ziye Luo\Desktop\Plagiarism-Detection-APP\Plagiarism-Detection-APP\output.txt", a);
-
+            Console.WriteLine("please write here");  
         }
-        //写文件
-        void WriteWS(string filePath,string input)
+        /*
+         * 这个方法用于将最后结果写到文件里
+         * 参数是最后的结果List(每一行存一个)和文件路路径
+         */
+        void WriteWS(string filePath,List<string> input)
         {
 
 
             FileStream fs = new FileStream(filePath, FileMode.Create);
             StreamWriter sw = new StreamWriter(fs);
             try
-            {
-                sw.WriteLine(input);
-                sw.Flush();
+            {   foreach(string each in input)
+                {
+                    sw.WriteLine(input);
+                    sw.Flush();
+                }
                 sw.Close();
                 fs.Close();
                 Console.WriteLine("Writing has been completed");
