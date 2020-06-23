@@ -208,7 +208,7 @@ namespace Plagiarism_Detection_APP
              */
             Console.WriteLine("加载完成");
             LevenshteinDistance ins;
-            for (int i = 68; i < strs.Count(); i++)
+            for (int i = 0; i < strs.Count(); i++)
             {
 
                 for (int j = i+1; j < strs.Count(); j++)
