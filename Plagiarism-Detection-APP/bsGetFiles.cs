@@ -48,8 +48,17 @@ namespace Plagiarism_Detection_APP
 
         public static String getContent(string filename)//得到一个文件夹下的所有.cs内容
         {
+            string[] path;
             result = "";
-            string []path=GetFiles(new DirectoryInfo(filename), "*.cs").Split(';');
+            if (Common.Type == 0)
+            {
+                path = GetFiles(new DirectoryInfo(filename), "*.cs").Split(';');
+            }
+            else
+            {
+                path = GetFiles(new DirectoryInfo(filename), "(*.cpp | *.h)").Split(';');
+            }
+            
             string filecontent="";
             foreach (string file in path)
             {
